@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(16, 15, 15);
+}
+
+
+img {
+    width: 100px;
+ 
+
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-right: .5rem;
+}
+
+a {
+    color: antiquewhite;
+    text-decoration: none;
+    border: solid 1px;
+    padding: 2px;
+
+}
+
+
+a:hover{
+    background-color: rgb(52, 52, 52);
+}
