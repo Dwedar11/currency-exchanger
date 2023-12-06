@@ -1,0 +1,33 @@
+$font-color: whitesmoke;
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    img {
+        width: 60px;
+        margin-left: 10px;
+    }
+
+    nav {
+        display: flex;
+        gap: 10px;
+    }
+
+    a {
+        color: $font-color;
+        text-decoration: none;
+        padding: 10px;
+        border: solid 1px $font-color;
+        margin: 10px 15px;
+        &:hover {
+            color: black;
+            background-color: $font-color;
+        }
+    }
+}
