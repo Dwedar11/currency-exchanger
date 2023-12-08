@@ -18,8 +18,11 @@ export class ConverterPanelComponent implements OnInit {
     this.currenyService.getCurrencies().subscribe((res: any) => {
       this.currencies = res.rates
     })
-
   }
 
-
+  swap() {
+    let temp = this.from
+    this.from = this.to
+    this.to = temp
+  }
 }

@@ -14,7 +14,7 @@
             </div>
 
             <div class="input-group">
-                <button [disabled]="!amount" class="swap-button">
+                <button (click)="swap()" [disabled]="!amount" class="swap-button">
                     <img src="../../assets/images/swap.png" alt="swap">
                 </button>
             </div>
