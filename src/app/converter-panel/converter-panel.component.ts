@@ -11,7 +11,8 @@ export class ConverterPanelComponent implements OnInit {
   currencies: any
   from: string = 'EUR'
   to: string = 'USD'
-
+  convertedValue: number
+  rate: number
   constructor(private currenyService: CurrencyService) { }
 
   ngOnInit(): void {
@@ -25,4 +26,13 @@ export class ConverterPanelComponent implements OnInit {
     this.from = this.to
     this.to = temp
   }
+
+  convert() {
+    // this.currenyService.convert(this.from,this.to,this.amount).subscribe((res: any) => {
+    //   this.convertedValue = res.result
+    // })
+    this.rate = this.currencies[this.to] / this.currencies[this.from]
+    this.convertedValue = this.rate * this.amount
+  }
+
 }

@@ -29,17 +29,17 @@
     </div>
 
     <div class="convert-button">
-        <button class="convert-button" [disabled]="!amount" >Convert</button>
+        <button (click)="convert()" class="convert-button" [disabled]="!amount" >Convert</button>
     </div>
 
     <div class="formatter">
         <div class="amount-input">
-            <label class="relation">1.00 EUR = XXXX USD</label>
+            <label class="relation">1.00 {{from}} = {{rate}} {{to}}</label>
         </div>
 
         <div class="swapping-inputs">
             <div class="input-group">
-                <label class="converted-value" >XXX USD</label>
+                <label class="converted-value" >{{convertedValue}} {{to}}</label>
             </div>
 
             <div class="details-button" >

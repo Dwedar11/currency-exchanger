@@ -11,12 +11,14 @@ export class CurrencyService {
   constructor(private http: HttpClient) { }
   getCurrencies() {
     return this.http.get(`${this.baseUrl}latest?access_key=${this.accessKey}`)
-    
 
   }
-
-
-}
+  
+  convert(from: string, to: string, amount: number) {
+    return this.http.get(`${this.baseUrl}convert?access_key=${this.accessKey}&from=${from}&to=${to}&amount=${amount}`)
+  }
 
  
-  
+}
+
+
