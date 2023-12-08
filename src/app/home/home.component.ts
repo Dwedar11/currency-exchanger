@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  mostPopularCurr: string[] = [
+    'EUR', 'USD', 'GBP', 'JPY', 'CAD', 'CHF', 'AUD', 'CNY', 'HKD'
+  ]
+
 }
+
+

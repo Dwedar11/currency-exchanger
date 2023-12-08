@@ -2,34 +2,13 @@
 
 <h2>Currency Exchanger</h2>
 
+
 <app-converter-panel></app-converter-panel>
 
 <div class="cards-grid">
-    <div class="currency-card">
-        <h3>55</h3>
+
+    <div *ngFor="let currency of mostPopularCurr" class="currency-card">
+        <h3>55 {{currency}}</h3>
     </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
-    <div class="currency-card">
-        <h3>55</h3>
-    </div>
+
 </div>
