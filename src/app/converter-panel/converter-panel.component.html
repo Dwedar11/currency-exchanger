@@ -8,8 +8,8 @@
         <div class="swapping-inputs">
             <div class="input-group">
                 <label for="fromCurrency">From</label>
-                <select id="fromCurrency" [disabled]="!amount">
-                    <option value="UER">EUR</option>
+                <select [(ngModel)]="from" id="fromCurrency" [disabled]="!amount">
+                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}</option>
                 </select>
             </div>
 
@@ -21,8 +21,8 @@
 
             <div class="input-group">
                 <label for="toCurrency">To</label>
-                <select id="toCurrency" [disabled]="!amount">
-                    <option value="USD">USD</option>
+                <select [(ngModel)]="to"  id="toCurrency" [disabled]="!amount">
+                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}</option>
                 </select>
             </div>
         </div>
