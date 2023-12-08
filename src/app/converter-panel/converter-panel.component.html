@@ -2,48 +2,50 @@
     <div class="formatter">
         <div class="amount-input">
             <label for="amount">Amount</label>
-            <input  type="number" id="amount" [(ngModel)]="amount" >
+            <input type="number" id="amount" [(ngModel)]="currencyConversion.amount">
         </div>
 
         <div class="swapping-inputs">
             <div class="input-group">
                 <label for="fromCurrency">From</label>
-                <select [(ngModel)]="from" id="fromCurrency" [disabled]="!amount">
-                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}</option>
+                <select [(ngModel)]="currencyConversion.from" id="fromCurrency" [disabled]="!currencyConversion.amount">
+                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}
+                    </option>
                 </select>
             </div>
 
             <div class="input-group">
-                <button (click)="swap()" [disabled]="!amount" class="swap-button">
+                <button (click)="swap()" [disabled]="!currencyConversion.amount" class="swap-button">
                     <img src="../../assets/images/swap.png" alt="swap">
                 </button>
             </div>
 
             <div class="input-group">
                 <label for="toCurrency">To</label>
-                <select [(ngModel)]="to"  id="toCurrency" [disabled]="!amount">
-                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}</option>
+                <select [(ngModel)]="currencyConversion.to" id="toCurrency" [disabled]="!currencyConversion.amount">
+                    <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}
+                    </option>
                 </select>
             </div>
         </div>
     </div>
 
     <div class="convert-button">
-        <button (click)="convert()" class="convert-button" [disabled]="!amount" >Convert</button>
+        <button (click)="convert()" class="convert-button" [disabled]="!currencyConversion.amount">Convert</button>
     </div>
 
     <div class="formatter">
         <div class="amount-input">
-            <label class="relation">1.00 {{from}} = {{rate}} {{to}}</label>
+            <label class="relation">1.00 {{currencyConversion.from}} = {{rate}} {{currencyConversion.to}}</label>
         </div>
 
         <div class="swapping-inputs">
             <div class="input-group">
-                <label class="converted-value" >{{convertedValue}} {{to}}</label>
+                <label class="converted-value">{{convertedValue}} {{currencyConversion.to}}</label>
             </div>
 
-            <div class="details-button" >
-                <button [disabled]="!amount" routerLink="/details">More Details</button>
+            <div class="details-button">
+                <button (click)="redirectToDetails()" [disabled]="!currencyConversion.amount" >More Details</button>
             </div>
         </div>
     </div>
