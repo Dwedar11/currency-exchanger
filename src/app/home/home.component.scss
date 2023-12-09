@@ -4,7 +4,7 @@ $bg-color:#242323;
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3,31%);
   
   row-gap: 20px;
   column-gap: 40px;

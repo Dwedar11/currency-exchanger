@@ -37,12 +37,12 @@
 
     <div class="formatter">
         <div class="amount-input">
-            <label class="relation">1.00 {{currencyConversion.from}} = {{rate}} {{currencyConversion.to}}</label>
+            <label class="relation">1 {{currencyConversion.from}} = {{rate|number:'1.0-2'}} {{currencyConversion.to}}</label>
         </div>
 
         <div class="swapping-inputs">
             <div class="input-group">
-                <label class="converted-value">{{convertedValue}} {{currencyConversion.to}}</label>
+                <label class="converted-value">{{convertedValue|number:'1.0-2'}} {{currencyConversion.to}}</label>
             </div>
 
             <div *ngIf="isActiveRoute('/')" class="details-button">

@@ -2,7 +2,7 @@
 <div class="cards-grid">
 
     <div *ngFor="let currency of mostPopularCurr" class="currency-card">
-        <h3 >{{getPopularCurr(currency)}} {{currency}}</h3>
+        <h3 >{{getPopularCurr(currency)|number:'1.0-2'}} {{currency}}</h3>
     </div>
 
 </div>
