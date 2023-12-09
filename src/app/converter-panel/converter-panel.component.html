@@ -8,7 +8,8 @@
         <div class="swapping-inputs">
             <div class="input-group">
                 <label for="fromCurrency">From</label>
-                <select [(ngModel)]="currencyConversion.from" id="fromCurrency" [disabled]="!currencyConversion.amount">
+                <select [(ngModel)]="currencyConversion.from" id="fromCurrency"
+                    [disabled]="!currencyConversion.amount || isActiveRoute('/details')">
                     <option [value]="currency.key" *ngFor="let currency of currencies|keyvalue">{{currency.key}}
                     </option>
                 </select>
@@ -44,8 +45,8 @@
                 <label class="converted-value">{{convertedValue}} {{currencyConversion.to}}</label>
             </div>
 
-            <div class="details-button">
-                <button (click)="redirectToDetails()" [disabled]="!currencyConversion.amount" >More Details</button>
+            <div *ngIf="isActiveRoute('/')" class="details-button">
+                <button (click)="redirectToDetails()" [disabled]="!currencyConversion.amount">More Details</button>
             </div>
         </div>
     </div>

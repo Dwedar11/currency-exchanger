@@ -1,8 +1,8 @@
 <header>
     <img src="../../assets/images/istockphoto-1061632426-612x612.jpg" alt="Logo" class="logo" />
     <nav>
-        <a routerLink="/details">EUR-USD Details</a>
-        <a routerLink="/details">EUR-GBP Details</a>
+        <a (click)="redirectToDetails('EUR', 'USD')">EUR-USD Details</a>
+        <a (click)="redirectToDetails('EUR', 'GBP')">EUR-GBP Details</a>
     </nav>
 </header>
 

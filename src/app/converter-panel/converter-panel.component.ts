@@ -14,7 +14,7 @@ export class ConverterPanelComponent implements OnInit {
   convertedValue: number
   rate: number
   @Output() conversion = new EventEmitter<CurrencyConversion>()
-
+  
   currencyConversion: CurrencyConversion = {
 
     from: 'EUR',
@@ -47,7 +47,11 @@ export class ConverterPanelComponent implements OnInit {
   }
 
   redirectToDetails() {
-    this.router.navigate(['/details'])
+    this.router.navigate(['/details'])   
   }
 
+  isActiveRoute(path:string){
+    return this.router.isActive(path,true)
+
+  }
 }

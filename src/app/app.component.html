@@ -1,8 +1,12 @@
-<app-header></app-header>
+<app-header (conversion)="onConversion($event)"></app-header>
 
-<h2>Currency Exchanger</h2>
+<h2 *ngIf="isActiveRoute('/')">Currency Exchanger</h2>
+<div class="details-panel" *ngIf="isActiveRoute('/details')">
+  <h2></h2>
+  <button routerLink="/">Back to Home</button>
+</div>
 
+<app-converter-panel (conversion)="onConversion($event)"></app-converter-panel>
 
-<app-converter-panel (conversion)="onConversion($event)" ></app-converter-panel>
-
-<app-home [currencyConversion]="currencyConversion" ></app-home>
+<app-home [currencyConversion]="currencyConversion" *ngIf="isActiveRoute('/')"></app-home>
+<app-details *ngIf="isActiveRoute('/details')"></app-details>
