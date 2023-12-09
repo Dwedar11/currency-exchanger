@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CurrencyService } from '../services/currencyService/currency.service';
 import { CurrencyConversion } from '../interfaces/currencyConversion';
 import { Router } from '@angular/router';
@@ -13,6 +13,7 @@ export class ConverterPanelComponent implements OnInit {
   currencies: any
   convertedValue: number
   rate: number
+  @Output() conversion = new EventEmitter<CurrencyConversion>()
 
   currencyConversion: CurrencyConversion = {
 
@@ -23,15 +24,8 @@ export class ConverterPanelComponent implements OnInit {
   constructor(private currenyService: CurrencyService, private router: Router) { }
 
   ngOnInit(): void {
-
-    this.currenyService.getConversion().subscribe(res => {
-      this.currencyConversion = res
-    })
-
     this.currenyService.getCurrencies().subscribe((res: any) => {
       this.currencies = res.rates
-
-
     })
   }
 
@@ -49,10 +43,10 @@ export class ConverterPanelComponent implements OnInit {
     if (this.currencyConversion.amount) {
       this.convertedValue = this.rate * this.currencyConversion.amount
     }
+    this.conversion.emit(this.currencyConversion)
   }
 
   redirectToDetails() {
-    this.currenyService.updateConversion(this.currencyConversion)
     this.router.navigate(['/details'])
   }
 

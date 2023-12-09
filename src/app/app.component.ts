@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrencyConversion } from './interfaces/currencyConversion';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  currencyConversion: CurrencyConversion
   title = 'currency-exchanger';
+
+  onConversion(event: CurrencyConversion) {
+    this.currencyConversion = event
+
+  }
+
 }

@@ -1,2 +1,8 @@
-<!-- <app-home></app-home> -->
-<router-outlet></router-outlet>
+<app-header></app-header>
+
+<h2>Currency Exchanger</h2>
+
+
+<app-converter-panel (conversion)="onConversion($event)" ></app-converter-panel>
+
+<app-home [currencyConversion]="currencyConversion" ></app-home>
