@@ -48,6 +48,7 @@ export class ConverterPanelComponent implements OnInit {
 
   redirectToDetails() {
     this.router.navigate(['/details'])   
+    this.conversion.emit(this.currencyConversion)
   }
 
   isActiveRoute(path:string){

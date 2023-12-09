@@ -19,6 +19,10 @@ export class CurrencyService {
   convert(from: string, to: string, amount: number) {
     return this.http.get(`${this.baseUrl}convert?access_key=${this.accessKey}&from=${from}&to=${to}&amount=${amount}`)
   }
+
+  getSymbols() {
+    return this.http.get(`${this.baseUrl}symbols?access_key=${this.accessKey}`)
+  }
 }
 
 

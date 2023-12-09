@@ -2,7 +2,7 @@
 
 <h2 *ngIf="isActiveRoute('/')">Currency Exchanger</h2>
 <div class="details-panel" *ngIf="isActiveRoute('/details')">
-  <h2></h2>
+  <h2>{{currencyConversion.from}} - {{symbols[currencyConversion.from]}}</h2>
   <button routerLink="/">Back to Home</button>
 </div>
 
