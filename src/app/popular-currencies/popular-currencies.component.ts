@@ -4,11 +4,11 @@ import { CurrencyService } from '../services/currencyService/currency.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-popular-currencies',
+  templateUrl: './popular-currencies.component.html',
+  styleUrls: ['./popular-currencies.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class PopularCurrenciesComponent implements OnInit {
   rates: any
   @Input() currencyConversion: CurrencyConversion
   mostPopularCurr: string[] = [

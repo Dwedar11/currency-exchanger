@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs'
-import { CurrencyConversion } from 'src/app/interfaces/currencyConversion';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +10,18 @@ export class CurrencyService {
   accessKey = '7e74ba7d8e19f2eb71e8be3d061c23ea'
 
   constructor(private http: HttpClient) { }
-  getCurrencies() {
-    return this.http.get(`${this.baseUrl}latest?access_key=${this.accessKey}`)
+
+  getCurrencies():Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}latest?access_key=${this.accessKey}`)
 
   }
 
-  convert(from: string, to: string, amount: number) {
-    return this.http.get(`${this.baseUrl}convert?access_key=${this.accessKey}&from=${from}&to=${to}&amount=${amount}`)
+  convert(from: string, to: string, amount: number) :Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}convert?access_key=${this.accessKey}&from=${from}&to=${to}&amount=${amount}`)
   }
 
-  getSymbols() {
-    return this.http.get(`${this.baseUrl}symbols?access_key=${this.accessKey}`)
+  getSymbols():Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}symbols?access_key=${this.accessKey}`)
   }
 }
 

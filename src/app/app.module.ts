@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { PopularCurrenciesComponent } from './popular-currencies/popular-currencies.component';
 import { DetailsComponent } from './details/details.component';
 import { HeaderComponent } from './header/header.component';
 import { ConverterPanelComponent } from './converter-panel/converter-panel.component';
@@ -13,7 +13,7 @@ import {HttpClientModule}from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    PopularCurrenciesComponent,
     DetailsComponent,
     HeaderComponent,
     ConverterPanelComponent
