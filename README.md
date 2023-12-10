@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
+This project was built to convert currencies to and from other different currencies and to know the value of each specific currency according to other currencies, and also to convert the value of each specific currency to the the most popular 9 currencies's values. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
