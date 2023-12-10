@@ -23,6 +23,11 @@ export class CurrencyService {
   getSymbols():Observable<any> {
     return this.http.get<any>(`${this.baseUrl}symbols?access_key=${this.accessKey}`)
   }
+
+getHistoricatRates(date:string,from:string,to:string):Observable<any>{
+  return this.http.get<any>(`${this.baseUrl}${date}?access_key=${this.accessKey}&base=${from}&symbols=${to}`)
+}
+
 }
 
 

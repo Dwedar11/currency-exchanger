@@ -9,4 +9,4 @@
 <app-converter-panel (conversion)="onConversion($event)"></app-converter-panel>
 
 <app-popular-currencies [currencyConversion]="currencyConversion" *ngIf="isActiveRoute('/')"></app-popular-currencies>
-<app-details *ngIf="isActiveRoute('/details')"></app-details>
+<app-details *ngIf="isActiveRoute('/details')" [currencyConversion]="currencyConversion"></app-details>

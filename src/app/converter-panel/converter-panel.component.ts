@@ -36,8 +36,10 @@ export class ConverterPanelComponent implements OnInit {
   }
 
   convert() {
-    // this.currenyService.convert(this.from,this.to,this.amount).subscribe((res: any) => {
-    //   this.convertedValue = res.result
+    // Access Restricted - Your current Subscription Plan does not support this API Function.
+    // this.currenyService.convert(this.currencyConversion.from,this.currencyConversion.to, 
+    //   this.currencyConversion.amount ? this.currencyConversion.amount : 1).subscribe((res: any) => {
+    //     this.convertedValue = res.result
     // })
     this.rate = this.currencies[this.currencyConversion.to] / this.currencies[this.currencyConversion.from]
     if (this.currencyConversion.amount) {
