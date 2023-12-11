@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CurrencyService {
   baseUrl = 'http://data.fixer.io/api/'
-  accessKey = '7e74ba7d8e19f2eb71e8be3d061c23ea'
+  accessKey = '5e1bbb5f6e691f34faa346d75198063d'
 
   constructor(private http: HttpClient) { }
 
